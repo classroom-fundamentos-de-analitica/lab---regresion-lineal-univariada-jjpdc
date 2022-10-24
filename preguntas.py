@@ -1,9 +1,7 @@
 """
 Regresión Lineal Univariada
 -----------------------------------------------------------------------------------------
-
 En este laboratio se construirá un modelo de regresión lineal univariado.
-
 """
 import numpy as np
 import pandas as pd
@@ -42,7 +40,7 @@ def pregunta_01():
     print(y_reshaped.shape)
 
     # Imprima las nuevas dimensiones de `X`
-    return (X_reshaped.shape)
+    print(X_reshaped.shape)
 
 
 def pregunta_02():
@@ -72,7 +70,7 @@ def pregunta_02():
     print(type(df['fertility']))
 
     # Imprima la correlación entre las columnas `GDP` y `life` con 4 decimales.
-    return ("{:.4f}".format(df['GDP'].corr(df['life'])))
+    print("{:.4f}".format(df['GDP'].corr(df['life'])))
 
 
 def pregunta_03():
@@ -116,7 +114,7 @@ def pregunta_03():
     y_pred = reg.predict(prediction_space)
 
     # Imprima el R^2 del modelo con 4 decimales
-    return (reg.score(X_fertility, y_life).round(4))
+    print(reg.score(X_fertility, y_life).round(4))
 
 
 def pregunta_04():
@@ -167,4 +165,4 @@ def pregunta_04():
     # Compute and print R^2 and RMSE
     print("R^2: {:6.4f}".format(linearRegression.score(X_test.reshape(-1, 1), y_test)))
     rmse = np.sqrt(mean_squared_error(y_test, y_pred))
-    return ("Root Mean Squared Error: {:6.4f}".format(rmse))
+    print("Root Mean Squared Error: {:6.4f}".format(rmse))
